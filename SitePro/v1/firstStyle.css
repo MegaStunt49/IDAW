@@ -5,6 +5,8 @@
     justify-content: space-around;
     align-content: space-around;
     box-sizing: border-box;
+}
+.offWhite{
     background: rgb(245, 245, 245);
 }
 * {
