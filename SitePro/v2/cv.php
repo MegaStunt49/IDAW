@@ -10,6 +10,7 @@
             <div class="menu-flexible">
                 <?php
                     require_once('template_menu.php');
+                    renderMenuToHTML('cv');
                 ?>
             </div>
             <div class="element-flexible">

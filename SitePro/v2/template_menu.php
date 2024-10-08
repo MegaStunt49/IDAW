@@ -1,8 +1,24 @@
 <nav class="menu">
     <ul>
-        <li><a href="index.php">Accueil</a></li>
-        <li><a href="cv.php">CV</a></li>
-        <li><a href="projets.php">Projets</a></li>
-        <li><a href="infos_techniques.php">Infos</a></li>
+        <?php
+            function renderMenuToHTML($currentPageId) {
+                // un tableau qui d\'efinit la structure du site
+                $mymenu = array(
+                    // idPage titre
+                    'index' => 'Accueil' ,
+                    'cv' => 'CV' ,
+                    'projets' => 'Projets',
+                    'infos_techniques' => 'Infos'
+                    );
+                // ...
+                foreach($mymenu as $pageId => $pageParameters) {
+                    $CurrentPageString = "";
+                    if ($currentPageId == $pageId){
+                        $CurrentPageString = ' id="currentpage"';
+                    }
+                    echo ('<li><a' . $CurrentPageString . ' href="' . $pageId . '.php">' . $pageParameters . '</a></li>');
+                }
+            }
+        ?>
     </ul>
 </nav>
