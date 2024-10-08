@@ -9,7 +9,8 @@
     <body>
         <h1>Heure</h1>
         <?php       
-            echo date('h:i:s'). '<br>';
+            date_default_timezone_set('Europe/Paris');
+            echo date('H:i:s'). '<br>';
         ?>
     </body>
 </html>
