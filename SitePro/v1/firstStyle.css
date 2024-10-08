@@ -31,7 +31,8 @@
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    background: linear-gradient(#e0e0e0, #cababa);
+    background: linear-gradient(#4c00ff, #2a008b);
+    color: rgb(255, 255, 255);
     margin: -10px -10px;
     margin-bottom: 10px ;
 }
