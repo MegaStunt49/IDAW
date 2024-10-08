@@ -3,7 +3,7 @@
 ?>
         <div class="head">
             <div class="titre">
-                <h1>Index</h1>
+                <h1>Informations techniques</h1>
             </div>
         </div>
         <div class="conteneur-flexible ligne side">
@@ -14,9 +14,8 @@
             </div>
             <div class="element-flexible">
                 <div class="item 1">
-                    <div class="conteneur-flexible">
-                        <img height="620" src="https://i.pinimg.com/originals/b0/1d/df/b01ddf257d18c8a9b41e0502161d580c.gif">
-                    </div>
+                    <h1><pre>       Infos:</pre></h1>
+                    <p>Ce site a été réalisé grâce à PHP, html et CSS</p>
                 </div>
             </div>
         </div>

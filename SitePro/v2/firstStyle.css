@@ -24,9 +24,12 @@
 .menu-flexible{
     background-color: rgb(8, 0, 27);
     width: 160px;
+    min-height: 661px;
+    height: auto !important;
 }
 .element-flexible{
     flex: 1 0 auto;
+    padding: 20px;
 }
 
 .menu a {
