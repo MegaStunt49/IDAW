@@ -24,5 +24,6 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+<?php
+    require_once('template_footer.php');
+?>
