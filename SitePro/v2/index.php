@@ -8,13 +8,9 @@
         </div>
         <div class="conteneur-flexible ligne side">
             <div class="menu-flexible">
-                <nav class="menu">
-                    <ul>
-                        <li><a id="currentpage" href="index.php">Accueil</a></li>
-                        <li><a href="cv.php">CV</a></li>
-                        <li><a href="projets.php">Projets</a></li>
-                    </ul>
-                </nav>
+                <?php
+                    require_once('template_menu.php');
+                ?>
             </div>
             <div class="element-flexible">
                 <div class="item 1">
