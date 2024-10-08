@@ -1,12 +1,6 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3305/3305969.png">
-        <title>SitePro Projets</title> <!-- Titre fenêtre et nom du signet -->
-        <link rel="stylesheet" href="firstStyle.css">
-    </head>
-    <body>
+<?php
+    require_once('template_header.php');
+?>
         <div class="head">
             <div class="titre">
                 <h1><pre>Projets</pre></h1>
@@ -16,9 +10,9 @@
             <div class="menu-flexible">
                 <nav class="menu">
                     <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="cv.html">CV</a></li>
-                        <li><a id="currentpage" href="projets.html">Projets</a></li>
+                        <li><a href="index.php">Accueil</a></li>
+                        <li><a href="cv.php">CV</a></li>
+                        <li><a id="currentpage" href="projets.php">Projets</a></li>
                     </ul>
                 </nav>
             </div>

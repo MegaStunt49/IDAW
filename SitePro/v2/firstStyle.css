@@ -38,6 +38,10 @@
     color: whitesmoke;
 }
 
+.menu a:hover {
+    background: linear-gradient(#18102b, #0f0033);
+}
+
 .titre{
     align-self: center;
 }
