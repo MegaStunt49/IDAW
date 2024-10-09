@@ -9,6 +9,7 @@
     if(isset($_GET['lang'])) {
         $currentLangId = $_GET['lang'];
     }
+    $langues = array('fr' => 'en', 'en' => 'fr');
     $mymenu = array(
         // idPage titre
         'accueil' => 'Accueil' ,
@@ -16,11 +17,27 @@
         'projets' => 'Projets',
         'infos_techniques' => 'Infos',
         'contact' => 'Contact'
-        );
+    );
+    $translate = array(
+        // idPage titre
+        'Accueil' => 'HomePage' ,
+        'CV' => 'CV' ,
+        'Projets' => 'Projects',
+        'Infos' => 'Infos',
+        'Contact' => 'Contact',
+        'fr' => 'French',
+        'en' => 'English'
+    );
 ?>
         <div class="head">
+            <div class="space"></div>
             <div class="titre">
                 <h1><?php echo $mymenu[$currentPageId] ?></h1>
+            </div>
+            <div class="langue">
+                <?php
+                    echo ('<a href="index.php?page='.$currentPageId.'&lang='.$langues[$currentLangId].'">'.$translate[$langues[$currentLangId]].'</a>');
+                ?>
             </div>
         </div>
         <div class="conteneur-flexible ligne side">

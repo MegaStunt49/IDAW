@@ -50,19 +50,41 @@
     background: linear-gradient(#18102b, #0f0033);
 }
 
+.langue a {
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 5px;
+    width: 60px;
+    color: whitesmoke;
+}
+
+.langue a:hover {
+    background: linear-gradient(#18102b, #0f0033);
+}
+
 .titre{
     align-self: center;
+    flex-grow: 1;
 }
+
 .head{
     height: 80px;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     align-items: center;
     background: linear-gradient(#0f0033, #08001b);
     color: rgb(255, 255, 255);
     margin: -10px -10px;
     margin-bottom: 10px ;
+    padding-left: 30px;
+    padding-right: 30px;
 }
+
+.langue{
+    align-self: right;
+}
+
 #currentpage {
     color: rgb(60, 60, 70);
     background-color: rgb(15, 12, 30);
