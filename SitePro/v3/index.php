@@ -20,7 +20,7 @@
     );
     $translate = array(
         // idPage titre
-        'Accueil' => 'HomePage' ,
+        'Accueil' => 'Home Page' ,
         'CV' => 'CV' ,
         'Projets' => 'Projects',
         'Infos' => 'Infos',
@@ -32,7 +32,15 @@
         <div class="head">
             <div class="space"></div>
             <div class="titre">
-                <h1><?php echo $mymenu[$currentPageId] ?></h1>
+                <h1>
+                    <?php 
+                        $titre = $mymenu[$currentPageId];
+                        if ($currentLangId == 'en'){
+                            $titre = $translate[$titre];
+                        }
+                        echo $titre; 
+                    ?>
+                </h1>
             </div>
             <div class="langue">
                 <?php
