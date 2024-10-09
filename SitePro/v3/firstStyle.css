@@ -32,6 +32,11 @@
     padding: 20px;
 }
 
+.corps{
+    flex: 1 0 auto;
+    padding: 20px;
+}
+
 .menu a {
     padding: 10px;
     text-decoration: none;
