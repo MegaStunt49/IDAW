@@ -1,11 +1,4 @@
-<form id="style_form" action="index.php" method="GET">
-    <select name="css">
-        <option value="style1">style1</option>
-        <option value="style2">style2</option>
-    </select>
-    <input type="submit" value="Appliquer" />
-</form>
-<form id="login_form" action="connected.php" method="POST">
+<form id="login_form" action="index.php" method="POST">
     <table>
         <tr>
             <th>Login :</th>
@@ -16,13 +9,17 @@
             <td><input type="password" name="password"></td>
         </tr>
         <tr>
+            <th>Style :</th>
+            <td>
+                <select name="css">
+                    <option value="style1">style1</option>
+                    <option value="style2">style2</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
             <th></th>
             <td><input type="submit" value="Se connecter..." /></td>
         </tr>
     </table>
 </form>
-<?php 
-    if (isset($_COOKIE["style"])){
-        echo("<p>".$_COOKIE["style"]."</p>");
-    }
-?>
