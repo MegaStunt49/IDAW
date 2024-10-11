@@ -1,6 +1,11 @@
 <?php
     require_once('template_header.php');
 
+    if (isset($_GET['css'])){
+        $_COOKIE["style"] = $_GET['css'];
+        setcookie("style", $_GET["css"], time()+3600);
+    }
+
     $currentPageId = 'accueil';
     if(isset($_GET['page'])) {
         $currentPageId = $_GET['page'];

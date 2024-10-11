@@ -22,12 +22,6 @@
     </table>
 </form>
 <?php 
-    if (isset($_GET['css'])){
-        $_COOKIE["style"] = $_GET['css'];
-        setcookie("style", $_GET["css"], time()+3600);
-    }
-?>
-<?php 
     if (isset($_COOKIE["style"])){
         echo("<p>".$_COOKIE["style"]."</p>");
     }
