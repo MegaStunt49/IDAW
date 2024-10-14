@@ -1,4 +1,4 @@
-<form id="login_form" action="index.php" method="POST">
+<form id="login_form" action="connected.php" method="POST">
     <table>
         <tr>
             <th>Login :</th>
@@ -23,3 +23,8 @@
         </tr>
     </table>
 </form>
+<?php
+    if(isset($_GET['error'])) {
+        echo ('<p style="color:red;">'.$_GET['error'].'</p>');
+    }
+?>

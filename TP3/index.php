@@ -1,8 +1,10 @@
 <?php
-    if (isset($_POST['css'])){
-        $_COOKIE["style"] = $_POST['css'];
-        setcookie("style", $_POST["css"], time()+3600);
+    session_start();
+
+    if(!isset($_SESSION['login']) && !isset($_SESSION['password'])) {
+        header('Location: login.php');
     }
+
 
     require_once('template_header.php');
 
@@ -35,7 +37,19 @@
     );
 ?>
         <div class="head">
-            <div class="space"></div>
+            <div class="loginSpace colonne">
+                <div class="login">
+                    <p>
+                        <?php 
+                            $login = $_SESSION['login'];
+                            echo $login; 
+                        ?>
+                    </p>
+                </div>
+                <div class="disconnect">
+                    <a href="deconnection.php">Deconnection</a>
+                </div>
+            </div>
             <div class="titre">
                 <h1>
                     <?php 
