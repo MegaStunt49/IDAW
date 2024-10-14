@@ -8,7 +8,6 @@
     $errorText = "";
     $successfullyLogged = false;
     if (isset($_POST['css'])){
-        $_COOKIE["style"] = $_POST['css'];
         setcookie("style", $_POST["css"], time()+3600);
     }
     if(isset($_POST['login']) && isset($_POST['password'])) {
