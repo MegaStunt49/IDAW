@@ -15,12 +15,13 @@
     }
     if(isset($_POST['id']) && isset($_POST['login']) && isset($_POST['email'])){
         if($_POST['id']=="NULL"){
-            $request1 = $pdo->prepare("INSERT INTO `users` (`id`, `login`, `email`) VALUES (NULL, '".$_POST['login']."', '".$_POST['email']."')");
-            $request->execute();
+            $request1 = $pdo->prepare("INSERT INTO users (id, login, email) VALUES (NULL, '".$_POST['login']."', '".$_POST['email']."')");
+            $request1->execute();
         }
         else
         {
-            $request1 = $pdo->prepare("UPDATE `users` SET `login` = 'Ri1', `email` = 'fifi@loulou.or1' WHERE `users`.`id` = 1;");
+            $request1 = $pdo->prepare("UPDATE users SET login = '".$_POST['login']."', email = '".$_POST['email']."' WHERE users.id = ".$_POST['id'].";");
+            $request1->execute();
         }
     }
     $request = $pdo->prepare("select * from users");
