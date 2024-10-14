@@ -33,7 +33,8 @@
         'Infos' => 'Infos',
         'Contact' => 'Contact',
         'fr' => 'French',
-        'en' => 'English'
+        'en' => 'English',
+        'Déconnexion' => 'Disconnection'
     );
 ?>
         <div class="head">
@@ -47,7 +48,15 @@
                     </p>
                 </div>
                 <div class="disconnect">
-                    <a href="deconnection.php">Deconnection</a>
+                    <a href="deconnection.php">
+                        <?php 
+                            $deco = 'Déconnexion';
+                            if ($currentLangId == 'en'){
+                                $deco = $translate[$deco];
+                            }
+                            echo $deco; 
+                        ?>
+                    </a>
                 </div>
             </div>
             <div class="titre">
