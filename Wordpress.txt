@@ -1,0 +1,17 @@
+Questions :
+
+    IV
+        4.1)    Les articles sont des entrées répertoriées dans l'ordre chronologique inverse sur votre site. 
+        Contrairement aux articles, les pages sont faites pour un contenu non chronologique.
+        4.2)    Pour les administrateurs, les articles et pages sont accessibles dans le menu de gauche sur les pages web de wp-admin.
+        Pour les utilisateurs, les pages sont disponibles en lien cliquables et les articles sont visibles sur certaines pages.
+        4.3)    Un thème désigne l'ensemble des élements qui décident de l'aspect graphique de la page. (police, couleurs, orientation et forme des objects, animation de boutons,... etc)
+        4.4)    Un plugin est un programme additionnel à wordpress qui permet de rajouter des fonctionnalités au wordpress.
+        4.5)    Les widgets sont des programmes permettant de rajouter visuellement des options au wordpress.
+        4.6)    Un média est un fichier(image, vidéo, audio...) qui est stocké par le site afin d'être utiliser dans un article.
+        4.7)    Les catégories et étiquettes servent toutes deux à classer des articles, mais seul avoir une catégorie est obligatoire pour un article.
+        4.8)    Permalien = l'URL des pages de votre site.
+        4.9)    Un site SPA a une implémentation d'application web qui ne charge qu'un seul document web, puis met à jour le contenu du corps de ce document via des API
+        4.10)   Responsive signifie pouvoir s'adapter aux différentes plateformes pouvant accéder au site (smartphone, ordinateur,... etc)
+    
+    V
