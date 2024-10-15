@@ -19,12 +19,12 @@
     // ==============
     switch($_SERVER["REQUEST_METHOD"]) {
         case 'GET':
-        $result = get_users($pdo);
-        setHeaders();
-        exit(json_encode($result));
+            $result = get_users($pdo);
+            setHeaders();
+            exit(json_encode($result));
         case 'POST':
-        // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
-        http_response_code(501);
+            $request = $pdo->prepare("INSERT INTO users (id, login, email) VALUES (NULL, 'login', 'email')");
+            http_response_code(501);
         exit(-1);
     }
 ?>
