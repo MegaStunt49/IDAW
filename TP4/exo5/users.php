@@ -2,7 +2,7 @@
     require_once("init_pdo.php");
 
     function get_users($db){
-        $sql = "SELECT * FROM USER";
+        $sql = "SELECT * FROM USERs";
         $exe = $db->query($sql);
         $res = $exe->fetchAll(PDO::FETCH_OBJ);
         return $res;
