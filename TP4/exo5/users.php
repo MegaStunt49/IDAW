@@ -39,7 +39,7 @@
                 $email = $input['email'];
                 $requestPut = $pdo->prepare("UPDATE users SET login='".$login."', email='".$email."' WHERE id=".$id);
                 $requestPut->execute();
-                exit(http_response_code(201));
+                http_response_code(201);
             }
         case 'DELETE':
             if (isset($_GET['id'])){
