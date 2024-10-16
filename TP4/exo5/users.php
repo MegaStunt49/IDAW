@@ -39,10 +39,12 @@
                 http_response_code(201);
             }
         case 'DELETE':
-            $id = $_GET['id'];
-            $requestDelete = $pdo->prepare("DELETE FROM users WHERE id=".$id);
-            $requestDelete->execute();
-            http_response_code(201);
+            if (isset($_GET['id'])){
+                $id = $_GET['id'];
+                $requestDelete = $pdo->prepare("DELETE FROM users WHERE id=".$id);
+                $requestDelete->execute();
+                http_response_code(201);
+            }
         exit(-1);
     }
 ?>
