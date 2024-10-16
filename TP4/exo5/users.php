@@ -2,7 +2,7 @@
     require_once("init_pdo.php");
 
     function get_users($db){
-        $sql = "SELECT * FROM USERs";
+        $sql = "SELECT * FROM USERs ORDER BY `users`.`id` ASC";
         $exe = $db->query($sql);
         $res = $exe->fetchAll(PDO::FETCH_OBJ);
         return $res;
@@ -26,9 +26,12 @@
         case 'POST':
             $login = $input['login'];
             $email = $input['email'];
-            $requestPost = $pdo->prepare("INSERT INTO users (id, login, email) VALUES (NULL, '".$login."', '".$email."')");
+            $requestID = $pdo->query("SELECT * FROM USERs ORDER BY `users`.`id` DESC");
+            $data = $requestID->fetch(PDO::FETCH_OBJ);
+            $requestPost = $pdo->prepare("INSERT INTO users (id, login, email) VALUES ('".($data->id + 1)."', '".$login."', '".$email."')");
             $requestPost->execute();
             http_response_code(201);
+            exit(json_encode(($data->id + 1)));
         case 'PUT':
             if (isset($_GET['id'])){
                 $id = $_GET['id'];
@@ -36,7 +39,7 @@
                 $email = $input['email'];
                 $requestPut = $pdo->prepare("UPDATE users SET login='".$login."', email='".$email."' WHERE id=".$id);
                 $requestPut->execute();
-                http_response_code(201);
+                exit(http_response_code(201));
             }
         case 'DELETE':
             if (isset($_GET['id'])){

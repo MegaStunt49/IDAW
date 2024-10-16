@@ -28,7 +28,7 @@
         $request2 = $pdo->prepare("DELETE FROM users WHERE users.id = ".$_POST['id_del']);
         $request2->execute();
     }
-    $request = $pdo->prepare("select * from users");
+    $request = $pdo->prepare("select * from users ORDER BY `users`.`id` ASC");
     // TODO: add your code here
     // retrieve data from database using fetch(PDO::FETCH_OBJ) and
     // display them in HTML array
