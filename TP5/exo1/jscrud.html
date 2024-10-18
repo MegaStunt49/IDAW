@@ -82,14 +82,14 @@
             let date = $("#inputDate").val();
             let aime = $("#inputAime:checked").val() == "on";
             let remarques = $("#inputRemarques").val();
-            $("#studentsTableBody").append(`<tr id="${nom}${cnt}"><td>${nom}</td><td>${prenom}</td><td>${date}</td><td>${aime}</td><td>${remarques}</td><td><button onclick="editRow(${nom}${cnt})">Edit</button><button onclick="deleteRow(${nom}${cnt})">Delete</button></td></tr>`);
+            $("#studentsTableBody").append(`<tr id="${nom}${cnt}"><td>${nom}</td><td>${prenom}</td><td>${date}</td><td>${aime}</td><td>${remarques}</td><td><button onclick="editRow(${nom}${cnt},"${nom}","${prenom}",${date},"${aime}","${remarques}")">Edit</button><button onclick="deleteRow(${nom}${cnt})">Delete</button></td></tr>`);
             cnt++;
         }
         function deleteRow(nom) {
             $(nom).remove();
         }
-        function editRow(nom) {
-            $(nom).remove();
+        function editRow(id,nom,prenom,date,aime,remarques) {
+            $('#inputAime').prop('checked', aime);
         }
     </script>
 </body>
