@@ -73,6 +73,7 @@
         </div>
     </form>
     <script>
+        cnt = 0;
         function onFormSubmit() {
             // prevent the form to be sent to the server
             event.preventDefault();
@@ -81,7 +82,11 @@
             let date = $("#inputDate").val();
             let aime = $("#inputAime").val();
             let remarques = $("#inputRemarques").val();
-            $("#studentsTableBody").append(`<tr><td>${nom}</td><td>${prenom}</td><td>${date}</td><td>${aime}</td><td>${remarques}</td><td></td></tr>`);
+            $("#studentsTableBody").append(`<tr id="${nom}${cnt}"><td>${nom}</td><td>${prenom}</td><td>${date}</td><td>${aime}</td><td>${remarques}</td><td><button onclick="deleteRow(${nom}${cnt})">Delete</button></td></tr>`);
+            cnt++;
+        }
+        function deleteRow(nom) {
+            $(nom).remove();
         }
     </script>
 </body>
