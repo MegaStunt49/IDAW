@@ -82,14 +82,27 @@
             let date = $("#inputDate").val();
             let aime = $("#inputAime:checked").val() == "on";
             let remarques = $("#inputRemarques").val();
-            $("#studentsTableBody").append(`<tr id="${nom}${cnt}"><td>${nom}</td><td>${prenom}</td><td>${date}</td><td>${aime}</td><td>${remarques}</td><td><button onclick="editRow(${nom}${cnt},"${nom}","${prenom}",${date},"${aime}","${remarques}")">Edit</button><button onclick="deleteRow(${nom}${cnt})">Delete</button></td></tr>`);
+            $("#studentsTableBody").append(`<tr id="${nom}${cnt}"><td>${nom}</td><td>${prenom}</td><td>${date}</td><td>${aime}</td><td>${remarques}</td><td><button onclick="editRow('${nom}${cnt}','${nom}','${prenom}','${date}',${aime},'${remarques}')">Edit</button><button onclick="deleteRow(${nom}${cnt})">Delete</button></td></tr>`);
             cnt++;
         }
         function deleteRow(nom) {
             $(nom).remove();
         }
         function editRow(id,nom,prenom,date,aime,remarques) {
-            $('#inputAime').prop('checked', aime);
+            let check = "";
+            if (aime){
+                check = " checked";
+            }
+            $("#"+id).replaceWith(`<tr id="${id}"><td><input type="text" class="form-control" id="input2Nom" value="${nom}"></td><td><input type="text" class="form-control" id="input2Prenom" value="${prenom}"></td><td><input type="date" class="form-control" id="input2Date" value="${date}"></td><td><input type="checkbox" class="form-control" id="input2Aime"${check}></td><td><input type="text" class="form-control" id="input2Remarques" value="${remarques}"></td><td><button onclick="replaceRow('${id}')">Submit</button></td></form></tr>`);
+        }
+        function replaceRow(id) {
+            event.preventDefault();
+            let nom = $("#input2Nom").val();
+            let prenom = $("#input2Prenom").val();
+            let date = $("#input2Date").val();
+            let aime = $("#input2Aime:checked").val() == "on";
+            let remarques = $("#input2Remarques").val();
+            $("#"+id).replaceWith(`<tr id="${id}"><td>${nom}</td><td>${prenom}</td><td>${date}</td><td>${aime}</td><td>${remarques}</td><td><button onclick="editRow('${id}','${nom}','${prenom}','${date}',${aime},'${remarques}')">Edit</button><button onclick="deleteRow(${nom}${cnt})">Delete</button></td></tr>`);
         }
     </script>
 </body>
