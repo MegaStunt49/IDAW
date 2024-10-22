@@ -32,6 +32,23 @@
         <tbody>
         </tbody>
     </table>
+    <form id="login_form" action="" onsubmit="onFormSubmit();">
+        <table>
+            <input type="hidden" id="inputID" name="inputID" value="NULL">
+            <tr>
+                <th>Login :</th>
+                <td><input type="text" id="inputLogin" name="inputLogin"></td>
+            </tr>
+            <tr>
+                <th>Email :</th>
+                <td><input type="text" id="inputEmail" name="inputEmail"></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><input type="submit" value="Ajouter" /></td>
+            </tr>
+        </table>
+    </form>
     <script>
         $(document).ready(function(){$('#myTable').DataTable( {
             ajax: {"url":'users.php',"dataSrc": '',},
@@ -41,6 +58,36 @@
                 { data: 'email' }
             ],
         })});
+        function onFormSubmit() {
+            // prevent the form to be sent to the server
+            event.preventDefault();
+            var login = $("#inputLogin").val();
+            var email = $("#inputEmail").val();
+            var person = {
+                login: $("#inputLogin").val(),
+                email: $("#inputEmail").val()
+            };
+            console.log(person);
+            $.ajax({
+                url:'users.php',
+                type: "POST",
+                data: JSON.stringify(person),
+                contentType: "application/json; charset=utf-8",
+                traditional: true,
+                success: function (data) {
+                    let x = JSON.parse(data);
+                    console.log(x);
+                    $('#myTable').DataTable().row.add({
+                        id: x,
+                        login: login,
+                        email: email
+                    }).draw();
+                },
+                error: function (error) {
+                    console.log(`Error ${error}`);
+                }
+            });
+        }
     </script>
 </body>
 
