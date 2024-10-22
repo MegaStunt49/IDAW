@@ -27,6 +27,7 @@
                 <th>ID</th>
                 <th>Login</th>
                 <th>Email</th>
+                <th>CRUD</th>
             </tr>
         </thead>
         <tbody>
@@ -55,7 +56,10 @@
             columns: [
                 { data: 'id' },
                 { data: 'login' },
-                { data: 'email' }
+                { data: 'email' },
+                { data: null, 
+                    defaultContent: '<button onclick="deleteRow(this)">Delete</button><button onclick="editRow(this)">Edit</button>',
+                    targets: -1 }
             ],
         })});
         function onFormSubmit() {
@@ -67,7 +71,6 @@
                 login: $("#inputLogin").val(),
                 email: $("#inputEmail").val()
             };
-            console.log(person);
             $.ajax({
                 url:'users.php',
                 type: "POST",
@@ -87,6 +90,15 @@
                     console.log(`Error ${error}`);
                 }
             });
+        }
+        function deleteRow(button){
+            let row = $(button).closest('tr');
+            let rowData = $('#myTable').DataTable().row(row).data();
+            $.ajax({
+                url:`users.php?id=${rowData.id}`,
+                type: "DELETE"
+            });
+            $('#myTable').DataTable().row(row).remove().draw();
         }
     </script>
 </body>
